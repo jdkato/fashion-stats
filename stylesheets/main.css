@@ -10,9 +10,12 @@ body {
   color: #333;
   /*padding-top: 50px;*/
 }
-body > .container { padding: 30px 15px 0; }
 .container .text-muted { margin: 20px 0; }
-
+.page-header {
+  padding-bottom: 9px;
+  /*margin: 40px 0 20px;*/
+  border-bottom: 1px solid #eee;
+}
 /* Panels
 -------------------------------------------------- */
 .panel-custom {
@@ -25,14 +28,15 @@ body > .container { padding: 30px 15px 0; }
     background: #814EFA;
     border-color: #814EFA;
 }
+/*
 @media (min-width: 1200px) {
   .panel { height: 350px; }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .panel { height: 300px; }
 }
-/* Portrait tablets and small desktops */
 @media (max-width: 991px) {  }
+*/
 
 /* Navbar
 -------------------------------------------------- */
@@ -189,6 +193,7 @@ body > .container { padding: 30px 15px 0; }
 /* Footer
 -------------------------------------------------- */
 .footer {
+  margin-top: 30px;
   position: absolute;
   bottom: 0;
   width: 100%;
