@@ -16,6 +16,9 @@ body {
   /*margin: 40px 0 20px;*/
   border-bottom: 1px solid #eee;
 }
+.title-meta {
+  color: #777;
+}
 /* Panels
 -------------------------------------------------- */
 .panel-custom {
@@ -28,20 +31,11 @@ body {
     background: #814EFA;
     border-color: #814EFA;
 }
-/*
-@media (min-width: 1200px) {
-  .panel { height: 350px; }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .panel { height: 300px; }
-}
-@media (max-width: 991px) {  }
-*/
 
 /* Navbar
 -------------------------------------------------- */
 .navbar-static-top {
-  margin-bottom: 19px;
+  margin-bottom: 0;
 }
 .navbar-default {
   background-color: #f5f5f5;
