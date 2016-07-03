@@ -346,10 +346,11 @@ data: {
     }
 });
 
-map.labels();
+if (window.matchMedia("(min-width: 992px)").matches) {
+    map.labels();
+}
 // map.legend();
 
-// Alternatively with jQuery
 $(window).on('resize', function() {
    map.resize();
 });
