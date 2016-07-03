@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # Ignore CSV files
-scripts/data/
+scripts/
 
 # Distribution / packaging
 .Python
