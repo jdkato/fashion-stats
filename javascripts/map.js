@@ -59,8 +59,8 @@ var trendData = {
             label: "Apparel Manufacturing Establishments By Year",
             fill: false,
             lineTension: 0.1,
-            backgroundColor: "rgba(8, 81, 156, 1)",
-            borderColor: "rgba(8, 81, 156, 1)",
+            backgroundColor: "#337ab7",
+            borderColor: "#337ab7",
             borderCapStyle: 'butt',
             borderDash: [],
             borderDashOffset: 0.0,
@@ -69,7 +69,7 @@ var trendData = {
             pointBackgroundColor: "#fff",
             pointBorderWidth: 1,
             pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgba(8, 48, 107, 1)",
+            pointHoverBackgroundColor: "#fff",
             pointHoverBorderColor: "rgba(8, 48, 107, 1)",
             pointHoverBorderWidth: 2,
             pointRadius: 1,
@@ -83,6 +83,7 @@ var trendCtx = document.getElementById('state-trend-chart').getContext('2d');
 var trendChart = new Chart(trendCtx, {
     type: 'line',
     data: trendData,
+    showTooltips: false,
     options: {
         scales: {
             yAxes: [{
@@ -97,6 +98,9 @@ var trendChart = new Chart(trendCtx, {
                     labelString: 'Year'
                 }
             }]
+        },
+        tooltips: {
+            enabled: false
         }
     }
 });
