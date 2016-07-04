@@ -17,8 +17,11 @@ body {
   /*margin: 40px 0 20px;*/
   border-bottom: 1px solid #eee;
 }
-.title-meta {
+small, .title-meta {
   color: #777;
+}
+small {
+  font-size: 12px;
 }
 
 /* Panels
