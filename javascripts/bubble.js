@@ -321,8 +321,8 @@ function bubbleChart() {
     // change outline to indicate hover state.
     d3.select(this).attr('stroke', 'black');
 
-    var content = '<span class="name">Demographic: </span><span class="value">' +
-                  d.class +
+    var content = '<span class="name">Classification: </span><span class="value">' +
+                  d.demo +
                   '</span><br/>' +
                   '<span class="name">Item: </span><span class="value">' +
                   d.item +
