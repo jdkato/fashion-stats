@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fashion Stats</title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon-bar-chart.ico"/>
+  <link rel="shortcut icon" href="images/favicon-bar-chart.ico" type="image/x-icon"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheets/main.css">
@@ -158,6 +158,25 @@
 
     <h3>What kind of apparel do Americans buy?</h3>
 
+    <div class="row">
+      <div class="col-md-12">
+        <div id="toolbar">
+          <a href="#" id="all" class="button active btn btn-default btn-sm">All Expenditures</a>
+          <a href="#" id="demo" class="button btn btn-default btn-sm">By Demographic</a>
+        </div>
+        <div id="bubble-vis"></div>
+      </div>
+    </div>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
     <h3>How much does apparel cost?</h3>
   </div>
 
@@ -179,5 +198,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.7/datamaps.usa.min.js"></script>
   <script src="javascripts/map.js"></script>
   <script src="javascripts/spend.js"></script>
+  <script src="javascripts/bubble-toolip.js"></script>
+  <script src="javascripts/bubble.js"></script>
 </body>
 </html>
