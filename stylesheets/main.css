@@ -31,7 +31,7 @@ small {
 }
 .demo {
   font-size: 21px;
-  fill: #aaa;
+  fill: #333;
   cursor: default;
 }
 .tooltip {
