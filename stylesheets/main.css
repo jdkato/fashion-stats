@@ -1,6 +1,7 @@
 /* General
 -------------------------------------------------- */
 html {
+  /* Fixed footer */
   position: relative;
   min-height: 100%;
 }
@@ -9,12 +10,10 @@ body {
   margin-bottom: 20px;
   padding-bottom: 40px;
   color: #333;
-  /*padding-top: 50px;*/
 }
 .container .text-muted { margin: 20px 0; }
 .page-header {
   padding-bottom: 9px;
-  /*margin: 40px 0 20px;*/
   border-bottom: 1px solid #eee;
 }
 small, .title-meta {
