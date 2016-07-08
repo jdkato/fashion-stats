@@ -102,18 +102,21 @@
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script>
-  $.get('https://ecopolproject.blogspot.com/feeds/posts/default', function(data) {
-    var count = 0;
-    $(data).find("entry").each(function() {
-      var el = $(this);
-      if (count < 4) {
+  $.ajax({
+    type: 'GET',
+    url: "https://ecopolproject.blogspot.com/feeds/posts/summary?max-results=5&alt=json-in-script",
+    async: false,
+    contentType: "application/json",
+    dataType: 'jsonp',
+    success: function(json) {
+      for (var i = 0; i < 4; i++) {
+        var post = json.feed.entry[i];
         $("#posts").append(
-          '<a href="' + el.find('link[rel=alternate]').attr('href') +
-          '" class="list-group-item">' + el.find("title").text() + '</a>'
+          '<a href="' + post.link[post.link.length - 1].href +
+          '" class="list-group-item">' + post.title.$t + '</a>'
         );
       }
-      count++;
-    });
+    }
   });
   </script>
 </body>
