@@ -1,5 +1,3 @@
-Chart.defaults.global.responsive = true;
-
 var state2Trend = {
     'Alabama': [470, 477, 317, 152, 91, 65],
     'Alaska': [0, 0, 0, 8, 4, 4],
@@ -54,29 +52,27 @@ var state2Trend = {
 };
 var trendData = {
     labels: ["1990", "1995", "2000", "2005", "2010", "2015"],
-    datasets: [
-        {
-            label: "Apparel Manufacturing Establishments By Year",
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: "#337ab7",
-            borderColor: "#337ab7",
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: "rgba(8, 48, 107, 1)",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(8, 48, 107, 1)",
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: state2Trend.Oregon,
-        }
-    ]
+    datasets: [{
+        label: "Apparel Manufacturing Establishments By Year",
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: "#337ab7",
+        borderColor: "#337ab7",
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: "rgba(8, 48, 107, 1)",
+        pointBackgroundColor: "#fff",
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgba(8, 48, 107, 1)",
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: state2Trend.Oregon,
+    }]
 };
 var active_state = null;
 var trendCtx = document.getElementById('state-trend-chart').getContext('2d');
@@ -107,242 +103,247 @@ var trendChart = new Chart(trendCtx, {
 
 
 var map = new Datamap({
-  scope: 'usa',
-  element: document.getElementById('nation-est-chart'),
-  responsive: true,
-  geographyConfig: {
-   popupTemplate: function(geography, data) {
-        if (active_state !== geography.properties.name) {
-            active_state = geography.properties.name;
-            // console.log(state2Trend[active_state]);
-            $('#trend-label').html('State Trend: ' + active_state);
-            trendChart.data.datasets[0].data = state2Trend[active_state];
+    scope: 'usa',
+    element: document.getElementById('nation-est-chart'),
+    done: function(datamap) {
+        datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+            $('#modal-title').html(geography.properties.name);
+            $("#myModal").modal();
             trendChart.update();
-        }
-        return '<div class="hoverinfo">' +
-            geography.properties.name + ': ' +
-            (data.est || '0') +
-            ' establishments' +
-            '</div>';
+        });
     },
-    highlightBorderWidth: 3,
-    highlightFillColor: '#444',
-    highlightBorderColor: '#333',
-  },
-  legend: true,
-  fills: {
-  'bin0': '#f3f7fc', // 0 - 10
-  'bin1': '#deebf7', // 11 - 25
-  'bin2': '#c6dbef', // 33 - 42
-  'bin3': '#9ecae1', // 49 - 60
-  'bin4': '#6baed6', // 62 - 77
-  'bin5': '#4292c6', // 78- 96
-  'bin6': '#2171b5', // 115 - 195
-  'bin7': '#08519c', // 200 - 400
-  'bin8': '#08306b', // 1000+
-  defaultFill: '#EDDC4E'
-},
-data: {
-      "AZ": {
-        "fillKey": "bin2",
-        "est": 33
-      },
-      "CO": {
-        "fillKey": "bin3",
-        "est": 55
-      },
-      "DE": {
-        "fillKey": "bin0",
-        "est": 8
-      },
-      "FL": {
-        "est": 310,
-        "fillKey": "bin7"
-      },
-      "GA": {
-        "fillKey": "bin6",
-        "est": 115
-      },
-      "HI": {
-        "fillKey": "bin3",
-        "est": 58
-      },
-      "ID": {
-        "fillKey": "bin2",
-        "est": 33
-      },
-      "IL": {
-        "fillKey": "bin7",
-        "est": 205
-      },
-      "IN": {
-        "fillKey": "bin2",
-        "est": 39
-      },
-      "IA": {
-        "fillKey": "bin1",
-        "est": 19
-      },
-      "KS": {
-        "fillKey": "bin1",
-        "est": 15
-      },
-      "KY": {
-        "fillKey": "bin2",
-        "est": 39
-      },
-      "LA": {
-        "fillKey": "bin2",
-        "est": 39
-      },
-      "MD": {
-        "fillKey": "bin3",
-        "est": 49
-      },
-      "ME": {
-        "fillKey": "bin1",
-        "est": 15
-      },
-      "MA": {
-        "fillKey": "bin5",
-        "est": 89
-      },
-      "MN": {
-        "fillKey": "bin4",
-        "est": 75
-      },
-      "MI": {
-        "fillKey": "bin5",
-        "est": 92
-      },
-      "MS": {
-        "fillKey": "bin2",
-        "est": 36
-      },
-      "MO": {
-        "fillKey": "bin3",
-        "est": 60
-      },
-      "MT": {
-        "fillKey": "bin0",
-        "est": 8
-      },
-      "NC": {
-        "fillKey": "bin7",
-        "est": 203
-      },
-      "NE": {
-        "fillKey": "bin0",
-        "est": 10
-      },
-      "NV": {
-        "fillKey": "bin1",
-        "est": 13
-      },
-      "NH": {
-        "fillKey": "bin1",
-        "est": 16
-      },
-      "NJ": {
-        "fillKey": "bin6",
-        "est": 164
-      },
-      "NY": {
-        "fillKey": "bin8",
-        "est": 1234
-      },
-      "ND": {
-        "fillKey": "bin0",
-        "est": 3
-      },
-      "NM": {
-        "fillKey": "bin1",
-        "est": 19
-      },
-      "OH": {
-        "est": 77,
-        "fillKey": "bin4"
-      },
-      "OK": {
-        "fillKey": "bin1",
-        "est": 25
-      },
-      "OR": {
-        "fillKey": "bin4",
-        "est": 62
-      },
-      "PA": {
-        "fillKey": "bin6",
-        "est": 195
-      },
-      "RI": {
-        "fillKey": "bin0",
-        "est": 2
-      },
-      "SC": {
-        "fillKey": "bin4",
-        "est": 64
-      },
-      "SD": {
-        "fillKey": "bin3",
-        "est": 55
-      },
-      "TN": {
-        "fillKey": "bin5",
-        "est": 96
-      },
-      "TX": {
-        "fillKey": "bin7",
-        "est": 264
-      },
-      "UT": {
-        "fillKey": "bin3",
-        "est": 53
-      },
-      "WI": {
-        "fillKey": "bin2",
-        "est": 42
-      },
-      "VA": {
-        "fillKey": "bin5",
-        "est": 78
-      },
-      "VT": {
-        "fillKey": "bin0",
-        "est": 10
-      },
-      "WA": {
-        "fillKey": "bin5",
-        "est": 91
-      },
-      "WV": {
-        "fillKey": "bin1",
-        "est": 11
-      },
-      "WY": {
-        "fillKey": "bin0",
-        "est": 1
-      },
-      "CA": {
-        "fillKey": "bin8",
-        "est": 2718
-      },
-      "CT": {
-        "fillKey": "bin1",
-        "est": 12
-      },
-      "AK": {
-        "fillKey": "bin0",
-        "est": 4
-      },
-      "AR": {
-        "fillKey": "bin1",
-        "est": 19
-      },
-      "AL": {
-        "fillKey": "bin4",
-        "est": 65
-      }
+    responsive: true,
+    geographyConfig: {
+        popupTemplate: function(geography, data) {
+            if (active_state !== geography.properties.name) {
+                active_state = geography.properties.name;
+                trendChart.data.datasets[0].data = state2Trend[active_state];
+                trendChart.update();
+            }
+            return '<div class="hoverinfo">' +
+                geography.properties.name + ': ' +
+                (data.est || '0') +
+                ' establishments (click for more info)' +
+                '</div>';
+        },
+        highlightBorderWidth: 3,
+        highlightFillColor: '#444',
+        highlightBorderColor: '#333',
+    },
+    legend: true,
+    fills: {
+        'bin0': '#f3f7fc', // 0 - 10
+        'bin1': '#deebf7', // 11 - 25
+        'bin2': '#c6dbef', // 33 - 42
+        'bin3': '#9ecae1', // 49 - 60
+        'bin4': '#6baed6', // 62 - 77
+        'bin5': '#4292c6', // 78- 96
+        'bin6': '#2171b5', // 115 - 195
+        'bin7': '#08519c', // 200 - 400
+        'bin8': '#08306b', // 1000+
+        defaultFill: '#EDDC4E'
+    },
+    data: {
+        "AZ": {
+            "fillKey": "bin2",
+            "est": 33
+        },
+        "CO": {
+            "fillKey": "bin3",
+            "est": 55
+        },
+        "DE": {
+            "fillKey": "bin0",
+            "est": 8
+        },
+        "FL": {
+            "est": 310,
+            "fillKey": "bin7"
+        },
+        "GA": {
+            "fillKey": "bin6",
+            "est": 115
+        },
+        "HI": {
+            "fillKey": "bin3",
+            "est": 58
+        },
+        "ID": {
+            "fillKey": "bin2",
+            "est": 33
+        },
+        "IL": {
+            "fillKey": "bin7",
+            "est": 205
+        },
+        "IN": {
+            "fillKey": "bin2",
+            "est": 39
+        },
+        "IA": {
+            "fillKey": "bin1",
+            "est": 19
+        },
+        "KS": {
+            "fillKey": "bin1",
+            "est": 15
+        },
+        "KY": {
+            "fillKey": "bin2",
+            "est": 39
+        },
+        "LA": {
+            "fillKey": "bin2",
+            "est": 39
+        },
+        "MD": {
+            "fillKey": "bin3",
+            "est": 49
+        },
+        "ME": {
+            "fillKey": "bin1",
+            "est": 15
+        },
+        "MA": {
+            "fillKey": "bin5",
+            "est": 89
+        },
+        "MN": {
+            "fillKey": "bin4",
+            "est": 75
+        },
+        "MI": {
+            "fillKey": "bin5",
+            "est": 92
+        },
+        "MS": {
+            "fillKey": "bin2",
+            "est": 36
+        },
+        "MO": {
+            "fillKey": "bin3",
+            "est": 60
+        },
+        "MT": {
+            "fillKey": "bin0",
+            "est": 8
+        },
+        "NC": {
+            "fillKey": "bin7",
+            "est": 203
+        },
+        "NE": {
+            "fillKey": "bin0",
+            "est": 10
+        },
+        "NV": {
+            "fillKey": "bin1",
+            "est": 13
+        },
+        "NH": {
+            "fillKey": "bin1",
+            "est": 16
+        },
+        "NJ": {
+            "fillKey": "bin6",
+            "est": 164
+        },
+        "NY": {
+            "fillKey": "bin8",
+            "est": 1234
+        },
+        "ND": {
+            "fillKey": "bin0",
+            "est": 3
+        },
+        "NM": {
+            "fillKey": "bin1",
+            "est": 19
+        },
+        "OH": {
+            "est": 77,
+            "fillKey": "bin4"
+        },
+        "OK": {
+            "fillKey": "bin1",
+            "est": 25
+        },
+        "OR": {
+            "fillKey": "bin4",
+            "est": 62
+        },
+        "PA": {
+            "fillKey": "bin6",
+            "est": 195
+        },
+        "RI": {
+            "fillKey": "bin0",
+            "est": 2
+        },
+        "SC": {
+            "fillKey": "bin4",
+            "est": 64
+        },
+        "SD": {
+            "fillKey": "bin3",
+            "est": 55
+        },
+        "TN": {
+            "fillKey": "bin5",
+            "est": 96
+        },
+        "TX": {
+            "fillKey": "bin7",
+            "est": 264
+        },
+        "UT": {
+            "fillKey": "bin3",
+            "est": 53
+        },
+        "WI": {
+            "fillKey": "bin2",
+            "est": 42
+        },
+        "VA": {
+            "fillKey": "bin5",
+            "est": 78
+        },
+        "VT": {
+            "fillKey": "bin0",
+            "est": 10
+        },
+        "WA": {
+            "fillKey": "bin5",
+            "est": 91
+        },
+        "WV": {
+            "fillKey": "bin1",
+            "est": 11
+        },
+        "WY": {
+            "fillKey": "bin0",
+            "est": 1
+        },
+        "CA": {
+            "fillKey": "bin8",
+            "est": 2718
+        },
+        "CT": {
+            "fillKey": "bin1",
+            "est": 12
+        },
+        "AK": {
+            "fillKey": "bin0",
+            "est": 4
+        },
+        "AR": {
+            "fillKey": "bin1",
+            "est": 19
+        },
+        "AL": {
+            "fillKey": "bin4",
+            "est": 65
+        }
     }
 });
 
@@ -352,5 +353,5 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 // map.legend();
 
 $(window).on('resize', function() {
-   map.resize();
+    map.resize();
 });
