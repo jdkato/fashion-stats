@@ -102,12 +102,11 @@
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script>
-  $.get('http://ecopolproject.blogspot.com/feeds/posts/default', function(data) {
+  $.get('https://ecopolproject.blogspot.com/feeds/posts/default', function(data) {
     var count = 0;
     $(data).find("entry").each(function() {
       var el = $(this);
       if (count < 4) {
-        console.log(el);
         $("#posts").append(
           '<a href="' + el.find('link[rel=alternate]').attr('href') +
           '" class="list-group-item">' + el.find("title").text() + '</a>'
