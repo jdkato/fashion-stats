@@ -117,6 +117,7 @@ var spendData = {
         hoverBackgroundColor: '#8CC665',
         data: [1620, 1703, 1856, 1886, 1700, 1765],
         borderColor: 'white',
+        hoverBorderColor: '#333',
         borderWidth: 2
     }]
 };
