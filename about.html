@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <title>Fashion Stats</title>
-
-  <link rel="shortcut icon" href="images/favicon-bar-chart.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="images/favicon-bar-chart.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheets/non-responsive.css">
   <link rel="stylesheet" href="stylesheets/main.css">
-
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
 
@@ -41,73 +38,85 @@
       </div>
     </div>
   </nav>
-
   <div class="container">
-    <div class="page-header">
-      <h2>About</h2>
-    </div>
-    <p>
-      <b>Hi, there!</b> My name is Joseph Kato and I am a senior at
-      <a href="http://www.pdx.edu">Portland State University</a> majoring in
-      mathematics.
-    </p>
-    <p>
-      This website was created as part of the <a href="http://capstone.unst.pdx.edu/courses/multimedia-production-team">Multimedia Production Team</a>
-      senior capstone class:
-
-      <blockquote>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="page-header">
+          <h2>About</h2>
+        </div>
         <p>
-          The Multimedia Production Online Capstone addresses community issues
-          and needs by developing educational interactive online media.
-          Continuously taught since 1999, the class has undergone adjustment to
-          the changes in technology - from output on CD-ROMs and video, to web
-          pages and blogs developed entirely by teams of students working
-          completely online and working remotely, from around the world!
+          <b>Hi, there!</b> My name is Joseph Kato and I am a senior at
+          <a href="http://www.pdx.edu">Portland State University</a>. This website was created as part of the <a href="http://capstone.unst.pdx.edu/courses/multimedia-production-team">Multimedia Production Team</a> senior capstone class:
         </p>
-      </blockquote>
-    </p>
-
-    <p>
-      You can find our main <a href="#">website here</a> and our <a href="http://ecopolproject.blogspot.com/">class blog here</a>.
-    </p>
-
-    <div class="page-header">
-      <h2>Credits</h2>
+        <blockquote>
+          The Multimedia Production Online Capstone addresses community issues and needs by developing educational interactive online media. Continuously taught since 1999, the class has undergone adjustment to the changes in technology - from output on CD-ROMs and video, to web pages and blogs developed entirely by teams of students working completely online and working remotely, from around the world!
+        </blockquote>
+        <p>
+          You can find our main <a href="#">website here</a> and our <a href="http://ecopolproject.blogspot.com/">class blog here</a>.
+        </p>
+      </div>
     </div>
-
-    <h3>Data</h3>
-    <ul>
-      <li><a href="http://www.bls.gov/cew/datatoc.htm">Quarterly Census of Employment and Wages</a></li>
-      <li><a href="http://www.bls.gov/cex/">Consumer Expenditure Survey</a></li>
-    </ul>
-
-    <h3>Design</h3>
-    <ul>
-      <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
-      <li><a href="http://fontawesome.io/">FontAwesome</a></li>
-    </ul>
-
-    <h3>Visualizations</h3>
-    <ul>
-      <li><a href="https://d3js.org/">D3.js</a></li>
-      <li><a href="http://www.chartjs.org/">Chart.js</a></li>
-      <li><a href="http://datamaps.github.io/">DataMaps</a></li>
-      <li><a href="http://vallandingham.me/bubble_charts_in_d3.html">Creating Animated Bubble Charts in D3</a></li>
-    </ul>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="page-header">
+          <h2>Credits</h2>
+        </div>
+        <h3>Data</h3>
+        <ul>
+          <li><a href="http://www.bls.gov/cew/datatoc.htm">Quarterly Census of Employment and Wages</a></li>
+          <li><a href="http://www.bls.gov/cex/">Consumer Expenditure Survey</a></li>
+        </ul>
+        <h3>Design</h3>
+        <ul>
+          <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+          <li><a href="http://fontawesome.io/">FontAwesome</a></li>
+        </ul>
+        <h3>Visualizations</h3>
+        <ul>
+          <li><a href="https://d3js.org/">D3.js</a></li>
+          <li><a href="http://www.chartjs.org/">Chart.js</a></li>
+          <li><a href="http://datamaps.github.io/">DataMaps</a></li>
+          <li><a href="http://vallandingham.me/bubble_charts_in_d3.html">Creating Animated Bubble Charts in D3</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-6">
+        <div class="page-header">
+          <h2>Recent Posts</h2>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Ecopol - Portland State University</div>
+          <div id="posts" class="list-group"></div>
+        </div>
+      </div>
+    </div>
   </div>
-
   <div class="footer-wrapper">
     <footer class="footer">
       <div class="container text-center">
         <p class="text-muted">
-            <a href="about.html">About</a> | <a href="http://www.pdx.edu">[Website link]</a> | <a href="http://ecopolproject.blogspot.com/">Blog</a>
+          <a href="about.html">About</a> | <a href="http://www.pdx.edu">[Website link]</a> | <a href="http://ecopolproject.blogspot.com/">Blog</a>
         </p>
       </div>
     </footer>
   </div>
-
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script>
+  $.get('http://ecopolproject.blogspot.com/feeds/posts/default', function(data) {
+    var count = 0;
+    $(data).find("entry").each(function() {
+      var el = $(this);
+      if (count < 4) {
+        console.log(el);
+        $("#posts").append(
+          '<a href="' + el.find('link[rel=alternate]').attr('href') +
+          '" class="list-group-item">' + el.find("title").text() + '</a>'
+        );
+      }
+      count++;
+    });
+  });
+  </script>
 </body>
 
 </html>
