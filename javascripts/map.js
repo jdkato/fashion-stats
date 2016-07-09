@@ -347,11 +347,6 @@ var map = new Datamap({
     }
 });
 
-if (window.matchMedia("(min-width: 992px)").matches) {
-    map.labels();
-}
-// map.legend();
-
 $(window).on('resize', function() {
     map.resize();
 });
