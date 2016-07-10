@@ -16,6 +16,11 @@ body {
   padding-bottom: 9px;
   border-bottom: 1px solid #eee;
 }
+.section-header {
+  margin: 10px auto 30px;
+  text-align: center;
+  color: #333;
+}
 small, .title-meta {
   color: #777;
 }
@@ -50,24 +55,148 @@ a.list-group-item {
   color: black;
 }
 
+
+/* Blog Feed
+-------------------------------------------------- */
+.blog-section {
+    position: relative;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+    background: #f9f9f9;
+}
+.list-group-item-text {
+  color: #555;
+}
+
 /* Panels
 -------------------------------------------------- */
+.panel-heading {
+    font-weight: bold;
+}
 .panel-custom {
-  border: 1px solid rgba(0,0,0,0.075);
-  border-bottom-color: rgba(0,0,0,0.125);
-  border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05),0 5px 10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.075);
+    border-bottom-color: rgba(0,0,0,0.125);
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05),0 5px 10px rgba(0,0,0,0.05);
+    height: 150px;
+}
+.panel-custom > .panel-heading {
+    color: #FAFAFA;
+    height: 15px;
+    padding: 4px 10px;
+}
+.panel-custom > .panel-body {
+    color: #555;
+}
+.panel-green > .panel-heading {
+    background: #65D977;
+    border-color: #65D977;
+}
+.panel-blue > .panel-heading {
+    background: #57CADF;
+    border-color: #57CADF;
+}
+.panel-orange > .panel-heading {
+    background: #DFB768;
+    border-color: #DFB768;
+}
+.panel-red > .panel-heading {
+    background: rgba(255, 104, 97, 1);
+    border-color: #FF6861;
 }
 .panel-purple > .panel-heading {
     background: #814EFA;
     border-color: #814EFA;
 }
+.section-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    color: #333;
+}
+.panel p {
+    margin-bottom: 5px;
+}
+
+a.panel-wrapper { text-decoration: none; }
 
 /* Navbar
 -------------------------------------------------- */
 .navbar-static-top {
   margin-bottom: 0;
 }
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.075);
+}
+.navbar-default .navbar-brand {
+  color: #333;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #337ab7;
+}
+.navbar-default .navbar-text {
+  color: #333;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #333;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #337ab7;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #337ab7;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #337ab7;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #333;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #333;
+}
+.navbar-default .navbar-link {
+  color: #333;
+}
+.navbar-default .navbar-link:hover {
+  color: #337ab7;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #333;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #337ab7;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #337ab7;
+    background-color: #ffffff;
+  }
+}
+/*
 .navbar-default {
   background-color: #f5f5f5;
   border-color: #f5f5f5;
@@ -139,7 +268,7 @@ a.list-group-item {
     color: #337ab7;
     background-color: #f5f5f5;
   }
-}
+}*/
 
 /* Footer
 -------------------------------------------------- */
@@ -153,7 +282,7 @@ a.list-group-item {
   width: 100%;
   height: 60px;
   border-top: 1px solid #e5e5e5;
-  background-color: #f5f5f5;
+  /*background-color: #f5f5f5;*/
   font-size: 14px;
 }
 .footer > .container {
