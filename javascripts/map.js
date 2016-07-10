@@ -107,8 +107,8 @@ var map = new Datamap({
     element: document.getElementById('nation-est-chart'),
     done: function(datamap) {
         datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-            $('#modal-title').html(geography.properties.name);
-            $("#myModal").modal();
+            // $('#modal-title').html(geography.properties.name);
+            // $("#myModal").modal();
             trendChart.update();
         });
     },
@@ -123,7 +123,7 @@ var map = new Datamap({
             return '<div class="hoverinfo">' +
                 geography.properties.name + ': ' +
                 (data.est || '0') +
-                ' establishments (click for more info)' +
+                ' establishments' +
                 '</div>';
         },
         highlightBorderWidth: 3,
