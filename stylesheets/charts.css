@@ -1,0 +1,27 @@
+#bubble-vis {
+  width: 940px;
+  height: 600px;
+  clear: both;
+  margin-bottom: 10px;
+}
+.demo {
+  font-size: 21px;
+  fill: #333;
+  cursor: default;
+}
+.tooltip {
+  position: absolute;
+  left: -125px;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 10px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+  border:1px solid rgba(200,200,200,0.85);
+}
+a.list-group-item {
+  color: black;
+}
