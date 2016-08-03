@@ -99,9 +99,8 @@
             <canvas id="state-cotton-chart"></canvas>
           </div>
           <div class="col-xs-6">
-            <div class="panel panel-default">
-            <div class="panel-heading">Agriculture Overview: {state}</div>
-            <table class="table table-bordered">
+            <table id="live-table" class="table table-bordered table-striped">
+            <caption id="live-caption">Agriculture Overview: TX</caption>
             <thead>
               <tr>
                 <th>Total Acres Operated</th>
@@ -111,13 +110,13 @@
             </thead>
             <tbody>
               <tr>
-                <td>13,800,000</td>
-                <td>210,000</td>
-                <td>1.5</td>
+                <td id="total">130000000</td>
+                <td id="cotton">4817000</td>
+                <td id="percent">3.7</td>
               </tr>
             </tbody>
           </table>
-          </div>
+          <p><small>Hover over a bar to update the table.</small></p>
           </div>
           <div class="col-xs-12">
             <p>
