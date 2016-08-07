@@ -9,7 +9,7 @@
   fill: #333;
   cursor: default;
 }
-.tooltip {
+.tooltip-d3 {
   position: absolute;
   left: -125px;
   font-size: 12px;
