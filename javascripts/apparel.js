@@ -289,7 +289,7 @@ var bubbleData = [
     {"id": 30, "group": "high", "demo": "Women's", "item": "Footwear", "cost": 169.12},
     {"id": 31, "group": "high", "demo": "Men's", "item": "Footwear", "cost": 110.57},
     {"id": 32, "group": "medium", "demo": "Boy's", "item": "Footwear", "cost": 53.05},
-    {"id": 32, "group": "medium", "demo": "Girls'", "item": "Footwear", "cost": 34.11},
+    {"id": 33, "group": "medium", "demo": "Girls'", "item": "Footwear", "cost": 34.11},
 ];
 
 /* bubbleChart creation function. Returns a function that will
