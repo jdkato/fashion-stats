@@ -103,7 +103,7 @@ var trendPieChart = new Chart(trendCtx, {
         },
         title: {
             display: true,
-            text: '2014 expenditures by demographic',
+            text: '2014 non-footwear expenditures by demographic',
             fontColor: '#777',
             fontStyle: 'normal'
         }
@@ -114,7 +114,7 @@ var spendData = {
     labels: ['1990', '1995', '2000', '2005', '2010', '2014'],
     datasets: [{
         type: 'bar',
-        label: 'Average annual expenditures on apparel',
+        label: 'Average annual expenditures on non-footwear apparel',
         backgroundColor: '#8CC665',
         hoverBackgroundColor: '#8CC665',
         data: [1620, 1703, 1856, 1886, 1700, 1765],
